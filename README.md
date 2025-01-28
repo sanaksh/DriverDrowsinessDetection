@@ -6,13 +6,13 @@ The Driver Drowsiness Detection System is a Python-based project that uses compu
 # Model
 
 
-# 1. Input Data Preprocessing
+## 1. Input Data Preprocessing
 Grayscale Conversion: Images are converted to grayscale to simplify computations since color information is not essential for detecting eye states.
 Rescaling: All pixel values are rescaled to the range [0, 1] (using rescale=1./255) to normalize the data and improve model performance.
 Target Size: Images are resized to (24, 24) for uniformity and to reduce computational load.
 
-#2. Model Architecture
-## Convolutional Layers
+## 2. Model Architecture
+Convolutional Layers
  - Conv2D (32 filters, 3x3 kernel):
  - The first layer extracts low-level features like edges and textures.
  - Uses ReLU activation to introduce non-linearity.
@@ -23,14 +23,14 @@ MaxPooling2D:
  - Reduces the spatial dimensions of feature maps.
  - Keeps the most important features, helping to make the model invariant to small translations of input data.
 
-# Regularization
+## Regularization
 Dropout Layers:
 Dropout(0.25) after convolutional layers:
  - Randomly sets 25% of neurons to zero during training to reduce overfitting.
  - Dropout(0.5) after the fully connected layer:
  - Prevents overfitting by ensuring robust learning in the final dense layers.
 
-# 4. Dense Layers
+## 4. Dense Layers
 Flatten:
  - Converts the multidimensional feature maps into a 1D vector.
 Dense(128, activation='relu'):
@@ -39,7 +39,7 @@ Dense(2, activation='softmax'):
  - Final output layer with 2 neurons (for Open and Closed classes).
  - Uses softmax activation to output class probabilities.
 
-# 5. Model Compilation
+## 5. Model Compilation
 Optimizer: Adam:
  - Combines the benefits of Adaptive Gradient Algorithm (AdaGrad) and Root Mean Square Propagation (RMSProp).
  - Efficient and robust for handling sparse gradients.
@@ -48,14 +48,14 @@ Loss Function: categorical_crossentropy:
 Metrics: accuracy:
  - Tracks model performance during training and validation.
 
-# 6. Training
+## 6. Training
 Batch Size: 32:
  - A balanced batch size for training on typical hardware while ensuring reasonable convergence speed.
 Epochs: 15:
  - Sufficient for this simple architecture and dataset size.
 Steps Per Epoch: Calculated based on the dataset size divided by the batch size.
 
-# 7. Output
+## 7. Output
 The model is saved as cnnCat2.h5 in the models/ directory for use in real-time detection.
 
 # Setup Instructions
