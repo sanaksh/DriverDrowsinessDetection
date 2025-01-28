@@ -22,9 +22,9 @@ Conv2D (64 filters, 3x3 kernel):
 MaxPooling2D:
  - Reduces the spatial dimensions of feature maps.
  - Keeps the most important features, helping to make the model invariant to small translations of input data.
-3. Regularization
 
-# Dropout Layers:
+# Regularization
+Dropout Layers:
 Dropout(0.25) after convolutional layers:
  - Randomly sets 25% of neurons to zero during training to reduce overfitting.
  - Dropout(0.5) after the fully connected layer:
@@ -37,7 +37,7 @@ Dense(128, activation='relu'):
  - Fully connected layer with 128 neurons for high-level feature integration.
 Dense(2, activation='softmax'):
  - Final output layer with 2 neurons (for Open and Closed classes).
-Uses softmax activation to output class probabilities.
+ - Uses softmax activation to output class probabilities.
 
 # 5. Model Compilation
 Optimizer: Adam:
