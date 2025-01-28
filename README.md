@@ -12,7 +12,7 @@ Rescaling: All pixel values are rescaled to the range [0, 1] (using rescale=1./2
 Target Size: Images are resized to (24, 24) for uniformity and to reduce computational load.
 
 #2. Model Architecture
-# Convolutional Layers
+## Convolutional Layers
  - Conv2D (32 filters, 3x3 kernel):
  - The first layer extracts low-level features like edges and textures.
  - Uses ReLU activation to introduce non-linearity.
